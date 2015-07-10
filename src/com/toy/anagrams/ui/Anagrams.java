@@ -186,7 +186,7 @@ public class Anagrams extends JFrame {
         buttonsPanel.add(guessButton, gridBagConstraints);
 
         nextTrial.setMnemonic('N');
-        nextTrial.setText("Nuevo Anagrama");
+        nextTrial.setText("Nuevo Anagrama mandril");
         nextTrial.setToolTipText("Fetch a new word.");
         nextTrial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
