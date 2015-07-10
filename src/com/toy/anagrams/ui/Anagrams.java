@@ -113,9 +113,6 @@ public class Anagrams extends JFrame {
         guessButton = new javax.swing.JButton();
         nextTrial = new javax.swing.JButton();
         mainMenu = new javax.swing.JMenuBar();
-        fileMenu = new javax.swing.JMenu();
-        aboutMenuItem = new javax.swing.JMenuItem();
-        exitMenuItem = new javax.swing.JMenuItem();
 
         setTitle("Anagrams");
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -211,38 +208,8 @@ public class Anagrams extends JFrame {
         mainPanel.add(buttonsPanel, gridBagConstraints);
 
         getContentPane().add(mainPanel, java.awt.BorderLayout.CENTER);
-
-        fileMenu.setMnemonic('F');
-        fileMenu.setText("File");
-
-        aboutMenuItem.setMnemonic('A');
-        aboutMenuItem.setText("About");
-        aboutMenuItem.setToolTipText("About");
-        aboutMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aboutMenuItemActionPerformed(evt);
-            }
-        });
-        fileMenu.add(aboutMenuItem);
-
-        exitMenuItem.setMnemonic('E');
-        exitMenuItem.setText("Exit");
-        exitMenuItem.setToolTipText("Quit Team, Quit!");
-        exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitMenuItemActionPerformed(evt);
-            }
-        });
-        fileMenu.add(exitMenuItem);
-
-        mainMenu.add(fileMenu);
-
         setJMenuBar(mainMenu);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void aboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuItemActionPerformed
-        new About(this).setVisible(true);
-    }//GEN-LAST:event_aboutMenuItemActionPerformed
 
     private void nextTrialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextTrialActionPerformed
         wordIdx = (wordIdx + 1) % wordLibrary.getSize();
@@ -254,10 +221,6 @@ public class Anagrams extends JFrame {
 
         guessedWord.requestFocusInWindow();
     }//GEN-LAST:event_nextTrialActionPerformed
-
-    private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_exitMenuItemActionPerformed
 
     private void guessedWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guessedWordActionPerformed
         if (wordLibrary.isCorrect(wordIdx, guessedWord.getText())){
@@ -276,11 +239,8 @@ public class Anagrams extends JFrame {
     }//GEN-LAST:event_exitForm
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JPanel buttonsPanel;
-    private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JLabel feedbackLabel;
-    private javax.swing.JMenu fileMenu;
     private javax.swing.JButton guessButton;
     private javax.swing.JLabel guessLabel;
     private javax.swing.JTextField guessedWord;
